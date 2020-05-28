@@ -1,0 +1,46 @@
+<section class="first">
+  <div class="screen">
+    <video class="video" width="320" height="240" muted autoplay loop>
+      <source src="gif/vid2.mp4" type="video/mp4">
+      <source src="" type="">
+    </video>
+  </div>
+</section>
+<section class="second">
+  <%-include("partials/header")%>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<div class="bgnd">
+  <form class="form-signin" action="/" method="post">
+    <img class="mb-4" src="images/ces.png" width="70%">
+    <button class="btn btn-lg btn-dark btn-block toshow">Register Here</button>
+    <a class="btn btn-lg btn-dark btn-block toshow1" href="images/cesta.pdf" target="_blank">About Codeaholic</a>
+
+    <div class="tohide">
+    <input class="form-control top " type="text" name="name" placeholder="Name" value="" required>
+      <input type="email" id="inputEmail" name="email" class="form-control middle " placeholder="Email address" required>
+      <input class="form-control middle " type="text" placeholder="College/School" name="collg" value="" required>
+      <input class="form-control bottom " type="tel" placeholder="Phone No." name="phone" value="">
+      <button class="btn btn-lg btn-dark btn-block regis" type="submit">Register</button>
+    </div>
+    </form>
+
+</div>
+<%-include("partials/footer")%>
+</section>
+<script>
+    $(".first").show();
+    setTimeout(function() {
+      $(".first").fadeOut(1000);
+      setTimeout(function() {
+        $(".second").fadeIn(1000);
+      }, 1000);
+    }, 2000);
+
+  $(".toshow").click(function(){
+    // $(".toshow1").hide();
+    $(".toshow").hide(function(){
+      $(".tohide").slideDown();
+    });
+  });
+</script>
